@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// 需要再复习一下
 int n,m;
 int a[1000010];
 
