@@ -4,31 +4,16 @@ using namespace std;
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
+    long long l;
     int n,m;
-    cin >> n >> m;
-    vector<long long> a(n);
+    long long c = 0;
+    cin >> l >> n >> m;
+    vector<long long> vec(n+1);
     for (int i=0;i<n;i++) {
-        cin >> a[i];
+        long long mid;
+        cin >> mid;
+        vec[i] = mid - c;
+        c = mid;
     }
-    for (int i=0;i<m;i++) {
-        int res;
-        cin >> res;
-        int l = 0;
-        int r = n-1;
-        int mid;
-        int con = -1;
-        while (l<=r) {
-            mid = (l+r)/2;
-            if (a[mid]>res) {
-                r = mid - 1;
-            } else if(a[mid]<res) {
-                l = mid + 1;
-            } else {
-                r = mid - 1;
-                con = mid;
-            }
-        }
-        cout << con << " ";
-    }
+    vec[n] = l-c;
 }
